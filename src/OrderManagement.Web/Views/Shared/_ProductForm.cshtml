@@ -1,8 +1,10 @@
 @model OrderManagement.Web.Models.Product
 
+<!-- Mostra eventuali errori di validazione generali del model. -->
 <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
 
 <div class="mb-3">
+    <!-- asp-for collega label e input alla proprieta' Name del model. -->
     <label asp-for="Name" class="form-label"></label>
     <input asp-for="Name" class="form-control" />
     <span asp-validation-for="Name" class="text-danger"></span>
@@ -15,6 +17,7 @@
 </div>
 
 <div class="row">
+    <!-- Due campi affiancati per far vedere anche una piccola impaginazione Bootstrap. -->
     <div class="col-md-6 mb-3">
         <label asp-for="Price" class="form-label"></label>
         <input asp-for="Price" class="form-control" />
@@ -28,6 +31,7 @@
 </div>
 
 <div class="mb-3">
+    <!-- Textarea per un testo libero opzionale. -->
     <label asp-for="Description" class="form-label"></label>
     <textarea asp-for="Description" class="form-control" rows="4"></textarea>
     <span asp-validation-for="Description" class="text-danger"></span>

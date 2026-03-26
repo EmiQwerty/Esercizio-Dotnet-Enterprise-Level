@@ -1,6 +1,7 @@
 @model OrderManagement.Web.Models.Product
 
 @{
+    // La view riceve il prodotto da eliminare e ne mostra i dati per conferma.
     ViewData["Title"] = "Elimina prodotto";
 }
 
@@ -18,7 +19,9 @@
         <p class="mb-0"><strong>Disponibilita':</strong> @Model.Stock</p>
     </div>
     <div class="card-footer">
+        <!-- La GET mostra la conferma, la POST esegue davvero la cancellazione. -->
         <form asp-action="Delete" method="post" class="d-flex gap-2">
+            <!-- Campo nascosto: l'id viene inviato al controller senza essere modificabile a video. -->
             <input type="hidden" asp-for="Id" />
             <button type="submit" class="btn btn-danger">Elimina</button>
             <a asp-action="Index" class="btn btn-outline-secondary">Annulla</a>

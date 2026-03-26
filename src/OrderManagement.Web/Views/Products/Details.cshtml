@@ -1,6 +1,7 @@
 @model OrderManagement.Web.Models.Product
 
 @{
+    // Qui la view riceve un singolo Product e lo mostra in sola lettura.
     ViewData["Title"] = "Dettagli prodotto";
 }
 
@@ -9,6 +10,7 @@
 
 <div class="card shadow-sm">
     <div class="card-body">
+        <!-- <dl> e' utile per mostrare coppie etichetta/valore. -->
         <dl class="row mb-0">
             <dt class="col-sm-3">Nome</dt>
             <dd class="col-sm-9">@Model.Name</dd>

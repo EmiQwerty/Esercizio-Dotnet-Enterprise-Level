@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Ogni view imposta ViewData["Title"], che viene poi usato nel layout comune. -->
     <title>@ViewData["Title"] - MVC Base Demo</title>
     <script type="importmap"></script>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
@@ -11,6 +12,7 @@
 </head>
 <body>
     <header>
+        <!-- Navbar condivisa da tutte le pagine del sito. -->
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">MVC Base Demo</a>
@@ -36,6 +38,7 @@
     </header>
     <div class="container">
         <main role="main" class="pb-3">
+            <!-- Qui viene inserito il contenuto specifico della view corrente. -->
             @RenderBody()
         </main>
     </div>
@@ -48,6 +51,7 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <!-- Alcune view, come Create/Edit, aggiungono script extra tramite section Scripts. -->
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
