@@ -1,19 +1,23 @@
+/* Dimensione base del font per l'intera applicazione. */
 html {
   font-size: 14px;
   min-height: 100%;
 }
 
+/* Su schermi medi e grandi aumentiamo leggermente la leggibilita'. */
 @media (min-width: 768px) {
   html {
     font-size: 16px;
   }
 }
 
+/* Sfondo chiaro neutro per far risaltare card e contenuti. */
 body {
   min-height: 100vh;
   background-color: #f8f9fa;
 }
 
+/* Evidenzia il focus degli elementi interattivi: utile anche per accessibilita'. */
 .btn:focus,
 .btn:active:focus,
 .btn-link.nav-link:focus,
@@ -22,10 +26,12 @@ body {
   box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
 }
 
+/* Rimuove il bordo predefinito per un look piu' pulito. */
 .card {
   border: 0;
 }
 
+/* Queste regole arrivano dal template MVC e migliorano il comportamento dei placeholder. */
 .form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
   color: var(--bs-secondary-color);
   text-align: end;

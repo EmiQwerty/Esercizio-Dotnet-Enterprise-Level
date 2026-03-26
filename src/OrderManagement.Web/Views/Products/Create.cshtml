@@ -1,14 +1,17 @@
 @model OrderManagement.Web.Models.Product
 
 @{
+    // Il titolo viene letto nel layout per comporre il tag <title> e l'intestazione pagina.
     ViewData["Title"] = "Crea prodotto";
 }
 
 <h1>Crea prodotto</h1>
 <p class="text-muted">La form invia i dati al controller con una richiesta HTTP POST.</p>
 
+<!-- asp-action genera in automatico l'URL verso l'action Create del controller corrente. -->
 <form asp-action="Create" method="post" class="card shadow-sm">
     <div class="card-body">
+        <!-- Partial view riusata anche nella pagina di modifica per evitare duplicazione. -->
         <partial name="_ProductForm" model="Model" />
     </div>
     <div class="card-footer d-flex gap-2">
@@ -18,5 +21,6 @@
 </form>
 
 @section Scripts {
+    <!-- Attiva la validazione client-side con jQuery Validation. -->
     <partial name="_ValidationScriptsPartial" />
 }

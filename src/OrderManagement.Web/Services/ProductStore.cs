@@ -2,8 +2,11 @@ using OrderManagement.Web.Models;
 
 namespace OrderManagement.Web.Services;
 
+// Questo servizio simula un piccolo database in memoria.
+// E' utile per imparare MVC senza introdurre subito SQL o Entity Framework.
 public class ProductStore
 {
+    // Lista iniziale usata come dati di esempio.
     private readonly List<Product> _products =
     [
         new Product
@@ -35,6 +38,7 @@ public class ProductStore
         }
     ];
 
+    // Restituisce tutti i prodotti ordinati per nome.
     public IReadOnlyList<Product> GetAll()
     {
         return _products
@@ -42,17 +46,20 @@ public class ProductStore
             .ToList();
     }
 
+    // Cerca un prodotto tramite id.
     public Product? GetById(int id)
     {
         return _products.FirstOrDefault(product => product.Id == id);
     }
 
+    // Assegna un nuovo id progressivo e inserisce il prodotto nella lista.
     public void Add(Product product)
     {
         product.Id = _products.Count == 0 ? 1 : _products.Max(item => item.Id) + 1;
         _products.Add(product);
     }
 
+    // Aggiorna il prodotto esistente copiando i nuovi valori.
     public bool Update(Product product)
     {
         var existingProduct = GetById(product.Id);
@@ -70,6 +77,7 @@ public class ProductStore
         return true;
     }
 
+    // Elimina il prodotto dalla lista se esiste.
     public bool Delete(int id)
     {
         var product = GetById(id);

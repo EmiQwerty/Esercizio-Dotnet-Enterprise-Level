@@ -1,6 +1,7 @@
 @model OrderManagement.Web.Models.Product
 
 @{
+    // Il model arriva gia' valorizzato dalla action GET Edit.
     ViewData["Title"] = "Modifica prodotto";
 }
 
@@ -9,6 +10,7 @@
 
 <form asp-action="Edit" method="post" class="card shadow-sm">
     <div class="card-body">
+        <!-- L'id non va modificato dall'utente, ma deve tornare al controller in POST. -->
         <input asp-for="Id" type="hidden" />
         <partial name="_ProductForm" model="Model" />
     </div>
@@ -19,5 +21,6 @@
 </form>
 
 @section Scripts {
+    <!-- Gli script di validazione sono gli stessi usati in Create. -->
     <partial name="_ValidationScriptsPartial" />
 }
