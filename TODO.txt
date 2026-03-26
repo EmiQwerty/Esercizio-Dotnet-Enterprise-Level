@@ -1,0 +1,27 @@
+TODO progetto - OrderManagement
+================================
+
+Attivita' prioritarie
+---------------------
+[ ] Aggiungere una persistenza reale dei dati al posto dello store in memoria
+[ ] Introdurre test unitari per model, service e controller
+[ ] Gestire meglio errori e casi "not found" nelle pagine prodotto
+[ ] Migliorare la validazione lato server e i messaggi mostrati nelle view
+
+Migliorie applicative
+---------------------
+[ ] Aggiungere ricerca e filtri nella lista prodotti
+[ ] Introdurre paginazione o ordinamento nella schermata elenco
+[ ] Rendere piu' chiaro il layout UI per create/edit/details/delete
+[ ] Aggiungere logging applicativo per le operazioni CRUD
+
+Manutenzione progetto
+---------------------
+[ ] Verificare che file `bin/` e `obj/` non vengano tracciati nel repository
+[ ] Ampliare il README con istruzioni su struttura, dipendenze e roadmap
+[ ] Definire convenzioni per naming, validazione e organizzazione delle view
+
+Note
+----
+- Usare questo file per tracciare attivita' tecniche e funzionali.
+- Aggiornare le priorita' man mano che il progetto evolve.
