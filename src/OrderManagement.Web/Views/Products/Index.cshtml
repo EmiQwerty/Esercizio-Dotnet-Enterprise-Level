@@ -1,0 +1,41 @@
+@model IReadOnlyList<OrderManagement.Web.Models.Product>
+
+@{
+    ViewData["Title"] = "Prodotti";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <div>
+        <h1 class="mb-1">Elenco prodotti</h1>
+        <p class="text-muted mb-0">Questa view riceve una lista dal controller e la mostra in tabella.</p>
+    </div>
+    <a asp-action="Create" class="btn btn-primary">Nuovo prodotto</a>
+</div>
+
+<table class="table table-striped table-bordered align-middle">
+    <thead class="table-light">
+        <tr>
+            <th>Nome</th>
+            <th>Categoria</th>
+            <th>Prezzo</th>
+            <th>Disponibilita'</th>
+            <th class="text-center">Azioni</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var product in Model)
+    {
+        <tr>
+            <td>@product.Name</td>
+            <td>@product.Category</td>
+            <td>@product.Price.ToString("C")</td>
+            <td>@product.Stock</td>
+            <td class="text-center">
+                <a asp-action="Details" asp-route-id="@product.Id" class="btn btn-sm btn-outline-secondary">Dettagli</a>
+                <a asp-action="Edit" asp-route-id="@product.Id" class="btn btn-sm btn-outline-primary">Modifica</a>
+                <a asp-action="Delete" asp-route-id="@product.Id" class="btn btn-sm btn-outline-danger">Elimina</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

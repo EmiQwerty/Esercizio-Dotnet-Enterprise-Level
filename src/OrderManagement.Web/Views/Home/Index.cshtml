@@ -1,0 +1,53 @@
+@{
+    ViewData["Title"] = "MVC Base";
+}
+
+<div class="p-5 mb-4 bg-light rounded-3 border">
+    <div class="container-fluid py-3">
+        <h1 class="display-5 fw-bold">Esempio ASP.NET Core MVC</h1>
+        <p class="col-md-10 fs-5">
+            Questa applicazione serve per spiegare le basi del pattern MVC:
+            il <strong>Model</strong> contiene i dati, il <strong>Controller</strong> gestisce le richieste
+            e la <strong>View</strong> mostra l'interfaccia HTML.
+        </p>
+        <a asp-controller="Products" asp-action="Index" class="btn btn-primary btn-lg">
+            Vai alla demo prodotti
+        </a>
+    </div>
+</div>
+
+<div class="row g-4">
+    <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+            <div class="card-body">
+                <h2 class="h4">Model</h2>
+                <p class="mb-0">
+                    Il file <code>Product.cs</code> descrive la struttura dei dati
+                    e contiene anche le regole di validazione con Data Annotations.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+            <div class="card-body">
+                <h2 class="h4">Controller</h2>
+                <p class="mb-0">
+                    <code>ProductsController</code> riceve la richiesta HTTP,
+                    prepara i dati e decide quale view restituire.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+            <div class="card-body">
+                <h2 class="h4">View</h2>
+                <p class="mb-0">
+                    Le view Razor in <code>Views/Products</code> trasformano i dati
+                    in HTML usando un model fortemente tipizzato.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

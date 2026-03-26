@@ -1,0 +1,33 @@
+@model OrderManagement.Web.Models.Product
+
+@{
+    ViewData["Title"] = "Dettagli prodotto";
+}
+
+<h1>Dettagli prodotto</h1>
+<p class="text-muted">Questa view mostra come una singola istanza del model viene renderizzata in pagina.</p>
+
+<div class="card shadow-sm">
+    <div class="card-body">
+        <dl class="row mb-0">
+            <dt class="col-sm-3">Nome</dt>
+            <dd class="col-sm-9">@Model.Name</dd>
+
+            <dt class="col-sm-3">Categoria</dt>
+            <dd class="col-sm-9">@Model.Category</dd>
+
+            <dt class="col-sm-3">Prezzo</dt>
+            <dd class="col-sm-9">@Model.Price.ToString("C")</dd>
+
+            <dt class="col-sm-3">Disponibilita'</dt>
+            <dd class="col-sm-9">@Model.Stock</dd>
+
+            <dt class="col-sm-3">Descrizione</dt>
+            <dd class="col-sm-9">@Model.Description</dd>
+        </dl>
+    </div>
+    <div class="card-footer d-flex gap-2">
+        <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">Modifica</a>
+        <a asp-action="Index" class="btn btn-outline-secondary">Torna alla lista</a>
+    </div>
+</div>

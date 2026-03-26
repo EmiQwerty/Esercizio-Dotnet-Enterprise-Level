@@ -1,0 +1,27 @@
+@model OrderManagement.Web.Models.Product
+
+@{
+    ViewData["Title"] = "Elimina prodotto";
+}
+
+<h1>Elimina prodotto</h1>
+<p class="text-muted">Qui si vede un'altra action GET per conferma e una action POST per eseguire davvero la cancellazione.</p>
+
+<div class="alert alert-warning">
+    Stai per eliminare <strong>@Model.Name</strong>. Vuoi continuare?
+</div>
+
+<div class="card shadow-sm">
+    <div class="card-body">
+        <p class="mb-1"><strong>Categoria:</strong> @Model.Category</p>
+        <p class="mb-1"><strong>Prezzo:</strong> @Model.Price.ToString("C")</p>
+        <p class="mb-0"><strong>Disponibilita':</strong> @Model.Stock</p>
+    </div>
+    <div class="card-footer">
+        <form asp-action="Delete" method="post" class="d-flex gap-2">
+            <input type="hidden" asp-for="Id" />
+            <button type="submit" class="btn btn-danger">Elimina</button>
+            <a asp-action="Index" class="btn btn-outline-secondary">Annulla</a>
+        </form>
+    </div>
+</div>

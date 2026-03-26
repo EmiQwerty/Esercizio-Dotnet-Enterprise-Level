@@ -1,0 +1,23 @@
+@model OrderManagement.Web.Models.Product
+
+@{
+    ViewData["Title"] = "Modifica prodotto";
+}
+
+<h1>Modifica prodotto</h1>
+<p class="text-muted">La stessa idea della creazione, ma qui il model arriva gia' compilato dal controller.</p>
+
+<form asp-action="Edit" method="post" class="card shadow-sm">
+    <div class="card-body">
+        <input asp-for="Id" type="hidden" />
+        <partial name="_ProductForm" model="Model" />
+    </div>
+    <div class="card-footer d-flex gap-2">
+        <button type="submit" class="btn btn-primary">Aggiorna</button>
+        <a asp-action="Index" class="btn btn-outline-secondary">Annulla</a>
+    </div>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

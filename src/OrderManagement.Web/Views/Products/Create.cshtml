@@ -1,0 +1,22 @@
+@model OrderManagement.Web.Models.Product
+
+@{
+    ViewData["Title"] = "Crea prodotto";
+}
+
+<h1>Crea prodotto</h1>
+<p class="text-muted">La form invia i dati al controller con una richiesta HTTP POST.</p>
+
+<form asp-action="Create" method="post" class="card shadow-sm">
+    <div class="card-body">
+        <partial name="_ProductForm" model="Model" />
+    </div>
+    <div class="card-footer d-flex gap-2">
+        <button type="submit" class="btn btn-primary">Salva</button>
+        <a asp-action="Index" class="btn btn-outline-secondary">Annulla</a>
+    </div>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
